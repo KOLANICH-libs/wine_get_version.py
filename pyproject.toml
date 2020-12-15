@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.2.0", "setuptools_scm[toml]>=3.4.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wine_get_version"
+readme = "ReadMe.md"
+description = "Just a small wrapper around wine_get_version"
+authors = [{name = "KOLANICH"}]
+classifiers = [
+	"Development Status :: 4 - Beta",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"License :: Public Domain",
+	"Operating System :: Microsoft :: Windows",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3 :: Only",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["wine_get_version"]
+license = {text = "Unlicense"}
+requires-python = ">=3.4"
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://codeberg.org/KOLANICH-libs/wine_get_version.py"
+
+[tool.setuptools]
+zip-safe = true
+platforms = ["Windows"]
+#platform-tags = ["win_amd64", "win_arm64", "win32"]
+
+[tool.distutils.bdist_wheel]
+plat-name = "win_amd64"
+
+[tool.setuptools.packages.find]
+include = ["wine_get_version", "wine_get_version.*"]
+
+[tool.setuptools_scm]
+
+[tool.black]
+line-length = 100500
+
